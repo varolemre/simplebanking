@@ -31,15 +31,15 @@ class ControllerTests  {
     @Spy
     @InjectMocks
     private AccountController controller;
- 
+
     @Mock
     private AccountService service;
 
-    
+
     @Test
     public void givenId_Credit_thenReturnJson()
-    throws Exception {
-        
+            throws Exception {
+
         Account account = new Account("Kerem Karaca", "17892");
 
         doReturn(account).when(service).findAccount( "17892");
@@ -50,8 +50,8 @@ class ControllerTests  {
 
     @Test
     public void givenId_CreditAndThenDebit_thenReturnJson()
-    throws Exception {
-        
+            throws Exception {
+
         Account account = new Account("Kerem Karaca", "17892");
 
         doReturn(account).when(service).findAccount( "17892");
@@ -65,7 +65,7 @@ class ControllerTests  {
 
     @Test
     public void givenId_CreditAndThenDebitMoreGetException_thenReturnJson()
-    throws Exception {
+            throws Exception {
         Assertions.assertThrows( InsufficientBalanceException.class, () -> {
             Account account = new Account("Kerem Karaca", "17892");
 
@@ -81,8 +81,8 @@ class ControllerTests  {
 
     @Test
     public void givenId_GetAccount_thenReturnJson()
-    throws Exception {
-        
+            throws Exception {
+
         Account account = new Account("Kerem Karaca", "17892");
 
         doReturn(account).when(service).findAccount( "17892");

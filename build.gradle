@@ -6,7 +6,7 @@ plugins {
 
 group = 'com.eteration.assignment'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '1.8'
+sourceCompatibility = '11'
 
 configurations {
 	developmentOnly
@@ -20,12 +20,17 @@ repositories {
 }
 
 dependencies {
+	implementation "mysql:mysql-connector-java:8.0.13"
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	compile("org.springframework.boot:spring-boot-starter-data-jpa")
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
 	testImplementation('org.mockito:mockito-core')
+	compileOnly 'org.projectlombok:lombok:1.18.22'
+	annotationProcessor 'org.projectlombok:lombok:1.18.22'
+
 
 }
 
